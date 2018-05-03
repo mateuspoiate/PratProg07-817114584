@@ -1,8 +1,8 @@
 package Test;
 
 
-import Negocio.Pais;
-import Service.PaisService;
+import Model.Pais;
+import Model.PaisService;
 
 import org.junit.runners.MethodSorters;
 import static org.junit.jupiter.api.Assertions.*;

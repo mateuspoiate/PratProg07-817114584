@@ -10,7 +10,7 @@ import java.sql.SQLException;
 public class PaisDao {
 	
 	public int incluirPais(Pais pais){
-		String sqlInsert = "INSERT INTO paises (nome_pais, area_pais, pop_pais) VALUES(?, ?, ?)";
+		String sqlInsert = "INSERT INTO paises (nome, area, populacao) VALUES(?, ?, ?)";
 		//Iniciar Conexao com o banco
 		//Try para verificar se nao ocorre exeptions
 		try {
@@ -18,7 +18,7 @@ public class PaisDao {
 			Connection conn = ConnectionFactory.realizarConexao();
 			PreparedStatement stm = conn.prepareStatement(sqlInsert);
 			stm.setString(1,pais.getNome());
-			stm.setDouble(2,pais.getArea());
+			stm.setDouble(2,pais.getArea()); //String aqui?
 			stm.setLong(3,pais.getPopulacao());
 			stm.execute();
 			
